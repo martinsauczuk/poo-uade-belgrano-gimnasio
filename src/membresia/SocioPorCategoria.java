@@ -1,13 +1,14 @@
 package membresia;
 
 import actividades.Actividad;
-import actividades.Categoria;
+import categorias.Categoria;
 
 public class SocioPorCategoria extends Socio {
 
     private Categoria categoriaPermitida;
 
-    public SocioPorCategoria(Categoria categoriaPermitida) {
+    public SocioPorCategoria(Categoria categoriaPermitida, String qr) {
+        super(qr);
         this.categoriaPermitida = categoriaPermitida;
     }
 

@@ -6,7 +6,8 @@ public class SocioPrueba extends Socio {
 
     private boolean actividadDisponible;
 
-    public SocioPrueba() {
+    public SocioPrueba(String qr) {
+        super(qr);
         actividadDisponible = true;
     }
 

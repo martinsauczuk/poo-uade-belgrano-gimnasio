@@ -7,7 +7,7 @@ public class SocioPorCantActividades extends Socio {
     private int cantDisponible;
 
     public SocioPorCantActividades(int cantDisponible, String qr) {
-        super("asdf");
+        super(qr);
         this.cantDisponible = cantDisponible;
     }
 

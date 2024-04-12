@@ -11,6 +11,6 @@ public class SocioFull extends Socio {
 
     @Override
     public boolean puedeAcceder(Actividad actividad) {
-        return isHabilitado();
+        return isHabilitado() && actividad.puedeSerRealizadaPor(this);
     }
 }

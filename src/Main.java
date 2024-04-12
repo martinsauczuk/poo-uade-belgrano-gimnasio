@@ -1,5 +1,6 @@
 import actividades.Actividad;
-import actividades.Categoria;
+import categorias.Categoria;
+import categorias.Pileta;
 import membresia.*;
 
 public class Main {
@@ -8,42 +9,21 @@ public class Main {
         // Categorias
         Categoria cardio = new Categoria("cardio");
         Categoria deportiva = new Categoria("deportiva");
-        Categoria pileta = new Categoria("pileta");
+        Categoria pileta = new Pileta("pileta");
 
         // Actividades
         Actividad natacion1 = new Actividad("natacion", "tarde", pileta);
         Actividad maquinas = new Actividad("maquinas", "noche", deportiva);
         Actividad crossfit = new Actividad("Crossfit", "noche", cardio );
 
-        Validador validador = new Validador();
 
-        // Membresia
-        Socio fede = new SocioPrueba();
-        validador.validarActividadQr(fede, crossfit);
+        SocioFull azul = new SocioFull("21sdfw34");
+        boolean autorizacion = azul.puedeAcceder(maquinas);
+        System.out.println(autorizacion);
 
-        Socio azul = new SocioFull("3isfadeoih43");
-        validador.validarActividadQr(azul, crossfit);
-
-        System.out.println(azul.puedeAcceder(natacion1));
-        System.out.println(azul.puedeAcceder(maquinas));
-        System.out.println(azul.puedeAcceder(natacion1));
-        azul.setHabilitado(false);
-        System.out.println(azul.puedeAcceder(crossfit));
-
-
-        SocioPorCantActividades agustin = new SocioPorCantActividades(5, "asdfasdf");
-//        System.out.println(agustin.puedeAcceder(natacion1));
-//        System.out.println(agustin.puedeAcceder(maquinas));
-//        System.out.println(agustin.puedeAcceder(natacion1));
-//        System.out.println(agustin.puedeAcceder(crossfit));
-//        System.out.println(agustin.puedeAcceder(crossfit));
-//        System.out.println(agustin.puedeAcceder(crossfit)); // false
-
-        SocioPorCategoria jose = new SocioPorCategoria(cardio);
-//        System.out.println(jose.puedeAcceder(crossfit)); // true
-//        System.out.println(jose.puedeAcceder(maquinas)); // false
-//        System.out.println(jose.puedeAcceder(maquinas)); // false
-//        System.out.println(jose.puedeAcceder(natacion1)); // false
+        azul.setRevisionOk(true);
+        boolean authPileta = azul.puedeAcceder(natacion1);
+        System.out.println(authPileta);
 
     }
 }
